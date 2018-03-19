@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+    <children>
+        <Pane prefHeight="50.0" prefWidth="156.0" style="-fx-background-color: #ea1f23;">
+            <children>
+                <ImageView fitHeight="18.0" fitWidth="31.0" layoutX="9.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/cloudlogo.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="41.0" layoutY="16.0" text="SMART CLIMATE" textFill="WHITE">
+                    <font>
+                        <Font name="Calibri" size="15.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane layoutY="50.0" prefHeight="556.0" prefWidth="156.0" style="-fx-background-color: #242833;">
+            <children>
+                <Button id="btn" alignment="TOP_LEFT" layoutX="38.0" layoutY="12.0" mnemonicParsing="false" onAction="#select_donnees" prefHeight="31.0" prefWidth="101.0" style="-fx-background-image: url('C:/Users/LPR/Documents/NetBeansProjects/smart_climate_improved/src/img/logos.png'); -fx-background-color: transparent;" stylesheets="@../style.css" text="IMPORTER" textFill="#898f9f">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button alignment="TOP_LEFT" layoutX="38.0" layoutY="52.0" mnemonicParsing="false" onAction="#select_donnees" prefHeight="31.0" prefWidth="124.0" style="-fx-background-image: url('C:/Users/LPR/Documents/NetBeansProjects/smart_climate_improved/src/img/logos.png'); -fx-background-color: transparent;" text="TÉLÉCHARGER" textFill="#898f9f">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="18.0" fitWidth="22.0" layoutX="12.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/imort_icon.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="18.0" fitWidth="30.0" layoutX="12.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/download_icon.png" />
+                    </image>
+                </ImageView>
+                <Button alignment="TOP_LEFT" layoutX="40.0" layoutY="93.0" mnemonicParsing="false" onAction="#select_visualiser" prefHeight="31.0" prefWidth="124.0" style="-fx-background-image: url('C:/Users/LPR/Documents/NetBeansProjects/smart_climate_improved/src/img/logos.png'); -fx-background-color: transparent;" text="VISUALISER" textFill="#898f9f">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="18.0" fitWidth="30.0" layoutX="14.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/visualiser.png" />
+                    </image>
+                </ImageView>
+                <Button alignment="TOP_LEFT" layoutX="40.0" layoutY="131.0" mnemonicParsing="false" onAction="#select_comparer" prefHeight="31.0" prefWidth="124.0" style="-fx-background-image: url('C:/Users/LPR/Documents/NetBeansProjects/smart_climate_improved/src/img/logos.png'); -fx-background-color: transparent;" text="COMPARER" textFill="#898f9f">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="18.0" fitWidth="30.0" layoutX="14.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/visualiser.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="105.0" fitWidth="131.0" layoutX="13.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true" />
+            <RadioButton fx:id="en_ligne" layoutX="14.0" layoutY="189.0" mnemonicParsing="false" text="EN LIGNE" textFill="#00cd11" />
+            </children>
+        </Pane>
+        <TabPane fx:id="tabpane" layoutX="156.0" layoutY="10.0" prefHeight="596.0" prefWidth="644.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="accueil_onglet" text="Accueil">
+                    <content>
+                        <AnchorPane fx:id="accueil_onglets" minHeight="0.0" minWidth="0.0" prefHeight="548.0" prefWidth="644.0" style="-fx-background-image: url('img/sky_wallpaper.jpg');">
+                            <children>
+                                <ImageView fx:id="cloud" fitHeight="105.0" fitWidth="200.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" />
+                                <Label layoutX="477.0" layoutY="33.0" text="BREST-GUIPAVAS" textFill="WHITE">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="50.0" fitWidth="88.0" layoutX="7.0" layoutY="487.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/sattelite.png" />
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="6.0" layoutY="531.0" prefHeight="21.0" prefWidth="304.0" text="https://donneespubliques.meteofrance.fr/" textFill="WHITE" />
+                                <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="435.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/location.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="visualisation_onglet" text="Visualisation évolution du climat">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@../style.css">
+                            <children>
+                                <TabPane layoutY="179.0" prefHeight="381.0" prefWidth="644.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab fx:id="tableau_onglet" text="Tableau">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="tableview" prefHeight="339.0" prefWidth="644.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="courbe_onglet" text="Courbe">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <LineChart fx:id="courbe_v" prefHeight="339.0" prefWidth="644.0">
+                                                            <xAxis>
+                                                                <NumberAxis prefWidth="0.0" side="BOTTOM" fx:id="xAxis" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis fx:id="yAxis" side="LEFT" />
+                                                            </yAxis>
+                                                        </LineChart>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                                <Pane layoutX="64.0" layoutY="6.0" prefHeight="122.0" prefWidth="516.0" stylesheets="@../style.css">
+                                    <children>
+                                        <ComboBox fx:id="combo_jour_v" layoutX="14.0" layoutY="20.0" prefWidth="150.0" />
+                                        <ComboBox fx:id="combo_mois_v" layoutX="184.0" layoutY="20.0" prefWidth="150.0" />
+                                        <ComboBox fx:id="combo_annee_v" layoutX="354.0" layoutY="20.0" prefWidth="150.0" />
+                                        <ComboBox fx:id="combo_station_v" layoutX="13.0" layoutY="77.0" prefWidth="150.0" />
+                                        <ComboBox fx:id="combo_type_v" layoutX="183.0" layoutY="77.0" prefWidth="150.0" />
+                                        <Label layoutX="14.0" layoutY="2.0" text="JOUR" textFill="#ea1f23">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="184.0" layoutY="5.0" text="MOIS" textFill="#ea1f23">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="354.0" layoutY="5.0" text="ANNÉE*" textFill="#ea1f23">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="14.0" layoutY="61.0" text="STATION*" textFill="#ea1f23">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="184.0" layoutY="61.0" text="TYPE" textFill="#ea1f23">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                        </Label>
+                                        <Button id="btn" layoutX="354.0" layoutY="77.0" mnemonicParsing="false" onAction="#visualiser" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: ea1f23;" styleClass="btn" stylesheets="@../style.css" text="VISUALISER" textFill="WHITE" />
+                                    </children>
+                                </Pane>
+                        <Button fx:id="telecharger_donnee" layoutX="79.0" layoutY="128.0" mnemonicParsing="false" onAction="#download_file_web_beta" prefHeight="31.0" prefWidth="487.0" style="-fx-background-color: transparent; -fx-border-style: dashed;" text="Cliquer ici pour télécharger les données pour cette date !" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="comparaison_onglet" text="Comparaison">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <SplitPane dividerPositions="0.5366726296958855" layoutY="-2.0" orientation="VERTICAL" prefHeight="561.0" prefWidth="638.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="259.0" prefWidth="636.0">
+                                            <children>
+                                                <Separator layoutX="312.0" layoutY="4.0" orientation="VERTICAL" prefHeight="224.0" prefWidth="6.0" />
+                                                <GridPane alignment="TOP_RIGHT" layoutX="29.0" layoutY="14.0" prefHeight="144.0" prefWidth="259.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="84.0" />
+                                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="156.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Label text="STATION*" textFill="#ea1f23">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <ComboBox fx:id="combo_station_1_c" prefWidth="150.0" GridPane.columnIndex="1" />
+                                                        <ComboBox fx:id="combo_annee_1_c" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                        <ComboBox fx:id="combo_mois_1_c" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                        <ComboBox fx:id="combo_jour_1_c" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                        <Label text="ANNÉE*" textFill="#ea1f23" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="MOIS" textFill="#ea1f23" GridPane.rowIndex="2">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="JOUR" textFill="#ea1f23" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </GridPane>
+                                                <GridPane alignment="TOP_RIGHT" layoutX="331.0" layoutY="14.0" prefHeight="144.0" prefWidth="259.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="84.0" />
+                                                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="156.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Label text="STATION*" textFill="#ea1f23">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <ComboBox fx:id="combo_station_2_c" prefWidth="150.0" GridPane.columnIndex="1" />
+                                                        <ComboBox fx:id="combo_annee_2_c" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                        <ComboBox fx:id="combo_mois_2_c" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                        <ComboBox fx:id="combo_jour_2_c" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                        <Label text="ANNÉE*" textFill="#ea1f23" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="MOIS" textFill="#ea1f23" GridPane.rowIndex="2">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="JOUR" textFill="#ea1f23" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </GridPane>
+                                                <TextField fx:id="ecart_type_1" editable="false" layoutX="139.0" layoutY="163.0" prefHeight="31.0" prefWidth="149.0" />
+                                                <Label layoutX="56.0" layoutY="168.0" text="Ecart Type" />
+                                                <TextField fx:id="ecart_type_2" editable="false" layoutX="441.0" layoutY="163.0" prefHeight="31.0" prefWidth="149.0" />
+                                                <Label layoutX="358.0" layoutY="168.0" text="Ecart Type" />
+                                                <Button id="btn" layoutX="263.0" layoutY="258.0" mnemonicParsing="false" onAction="#comparer" style="-fx-background-color: ea1f23;" stylesheets="@../style.css" text="COMPARER" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri" size="15.0" />
+                                       </font></Button>
+                                    <ComboBox fx:id="combo_type_c" layoutX="240.0" layoutY="217.0" prefWidth="150.0" />
+                                    <Label layoutX="198.0" layoutY="223.0" text="Type*" textFill="#ea1f23">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="268.0" prefWidth="636.0">
+                                            <children>
+                                                <LineChart fx:id="courbe_c" layoutY="-1.0" prefHeight="255.0" prefWidth="634.0">
+                                                    <xAxis>
+                                                        <NumberAxis prefWidth="0.0" side="BOTTOM" fx:id="xAxis2" />
+                                                    </xAxis>
+                                                    <yAxis>
+                                                        <NumberAxis fx:id="yAxis2" side="LEFT" />
+                                                    </yAxis>
+                                                </LineChart>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="donnees_onglet" text="Données">
+                    <content>
+                        <AnchorPane fx:id="donnees_onglets" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <SplitPane dividerPositions="0.5" layoutY="7.0" orientation="VERTICAL" prefHeight="560.0" prefWidth="644.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" stylesheets="@../style.css">
+                                            <children>
+                                                <Pane id="dashed_bord" layoutX="53.0" layoutY="31.0" prefHeight="123.0" prefWidth="551.0" stylesheets="@../style.css">
+                                                    <children>
+                                                        <Button layoutX="5.0" layoutY="4.0" mnemonicParsing="false" onAction="#import_file" prefHeight="114.0" prefWidth="540.0" style="-fx-background-color: transparent;" text="Déposez le fichier ici ou cliquez pour le importer" />
+                                                    </children>
+                                                </Pane>
+                                                <GridPane layoutX="53.0" layoutY="154.0" prefHeight="60.0" prefWidth="551.0">
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <ComboBox fx:id="combo_heure_tel" prefHeight="31.0" prefWidth="108.0" GridPane.rowIndex="1" />
+                                                        <ComboBox fx:id="combo_jour_tel" prefHeight="31.0" prefWidth="108.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                        <ComboBox fx:id="combo_mois_tel" prefHeight="31.0" prefWidth="108.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                        <ComboBox fx:id="combo_annee_tel" prefHeight="31.0" prefWidth="108.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                        <Label text="Heure" textFill="#ea1f23">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="Heure" textFill="#ea1f23">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="Jour" textFill="#ea1f23" GridPane.columnIndex="1">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="Mois*" textFill="#ea1f23" GridPane.columnIndex="2">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label text="Année*" textFill="#ea1f23" GridPane.columnIndex="3">
+                                                            <font>
+                                                                <Font size="13.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </GridPane>
+                                    <ProgressIndicator fx:id="progressIndicator" layoutX="528.0" layoutY="195.0" prefHeight="64.0" prefWidth="55.0" progress="0.0" />
+                                                  <Button id="btn" layoutX="382.0" layoutY="223.0" mnemonicParsing="false" onAction="#download_file_web" prefHeight="31.0" prefWidth="109.0" style="-fx-background-color: ea1f23;" stylesheets="@../style.css" text="Télécharger" textFill="WHITE" />
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                            <children>
+                                                <ListView fx:id="list_donnee" layoutX="13.0" layoutY="39.0" prefHeight="223.0" prefWidth="617.0" />
+                                                <Label layoutX="14.0" layoutY="14.0" text="Données existentes" />
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
